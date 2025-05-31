@@ -1,0 +1,76 @@
+QMainWindow {
+    background-color: #2E3440;
+    color: #D8DEE9;
+}
+
+QPushButton {
+    background-color: #4C566A;
+    color: #ECEFF4;
+    border: 1px solid #3B4252;
+    border-radius: 4px;
+    font-size: 10pt;
+}
+
+QPushButton:hover {
+    background-color: #5E81AC;
+    border: 1px solid #81A1C1;
+}
+
+QPushButton:pressed {
+    background-color: #88C0D0;
+}
+
+/* Поля ввода */
+QLineEdit {
+    background-color: #3B4252;
+    color: #ECEFF4;
+    border: 1px solid #4C566A;
+    border-radius: 4px;
+    font-size: 10pt;
+}
+
+QLineEdit:focus {
+    border: 1px solid #88C0D0;
+}
+
+/* Таблица */
+QTableView {
+    background-color: #3B4252;
+    color: #D8DEE9;
+    border: 1px solid #4C566A;
+    gridline-color: #4C566A;
+    selection-background-color: #5E81AC;
+    selection-color: #ECEFF4;
+    font-size: 9pt;
+}
+
+QHeaderView {
+    background-color: #434C5E;
+}
+
+QHeaderView::section {
+    background-color: #434C5E;
+    color: #ECEFF4;
+    padding: 4px;
+    border: 1px solid #4C566A;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+QTableView QTableCornerButton::section {
+    background-color: #434C5E;
+    border: 1px solid #4C566A;
+}
+
+QLabel {
+    color: #D8DEE9;
+    font-size: 10pt;
+}
+
+QStatusBar {
+    background-color: #2E3440;
+    color: #D8DEE9;
+}
+QStatusBar::item {
+    border: none;
+}
