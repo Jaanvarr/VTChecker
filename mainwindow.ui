@@ -11,130 +11,145 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>VirusTotal File Checker</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>530</y>
-      <width>62</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>API Key</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditApiKey">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>530</y>
-      <width>113</width>
-      <height>23</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonSetApiKey">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>530</y>
-      <width>83</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Save key</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="labelApiKeyStatus">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>530</y>
-      <width>121</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Key not setted</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonAddFiles">
-    <property name="geometry">
-     <rect>
-      <x>850</x>
-      <y>530</y>
-      <width>83</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Add Files</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonScanSelected">
-    <property name="geometry">
-     <rect>
-      <x>940</x>
-      <y>530</y>
-      <width>83</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Scan files</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonSearch">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>530</y>
-      <width>83</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Find Files</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonClearSearch">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>530</y>
-      <width>83</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Clear</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditSearch">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>530</y>
-      <width>113</width>
-      <height>23</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTableView" name="tableViewResults">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>1011</width>
-      <height>521</height>
-     </rect>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout_Main">
+    <item>
+     <widget class="QTableView" name="tableViewResults">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_Controls">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_ApiKey">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>API Key:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditApiKey">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonSetApiKey">
+          <property name="text">
+           <string>Save Key</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelApiKeyStatus">
+          <property name="text">
+           <string>Key not set</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_1">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_Search">
+        <item>
+          <widget class="QLabel" name="labelSearchPrompt">
+           <property name="text">
+            <string>Search (Name/Hash):</string>
+           </property>
+          </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditSearch">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="placeholderText">
+           <string>Enter name or hash...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonSearch">
+          <property name="text">
+           <string>Find</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonClearSearch">
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_FileActions">
+        <item>
+         <widget class="QPushButton" name="pushButtonAddFiles">
+          <property name="text">
+           <string>Add Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonScanSelected">
+          <property name="text">
+           <string>Scan Selected</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
